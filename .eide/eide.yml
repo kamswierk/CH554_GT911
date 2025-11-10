@@ -1,0 +1,105 @@
+version: "4.1"
+name: ch554
+type: C51
+deviceName: null
+packDir: null
+srcDirs:
+  - Core
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: 510c4f01b7d7aa2af2404eb1a422f846
+targets:
+  Debug:
+    cppPreprocessAttrs:
+      defineList:
+        - FREQ_SYS=16000000
+      incList:
+        - C:\Software\Develop\sdcc\include
+        - C:\Software\Develop\sdcc\include\mcs51
+        - Core/Inc
+      libList: []
+    excludeList: []
+    toolchain: SDCC
+    toolchainConfigMap:
+      SDCC:
+        options:
+          version: 3
+          afterBuildTasks: []
+          asm-compiler:
+            misc-control:
+              - --model-large
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            language-c: c11
+            language-cpp: c++11
+            misc-control:
+              - --model-large
+              - --xram-size 0x1000
+            optimization: level-debug
+          global:
+            device: mcs51
+            misc-control:
+              - --model-large
+            optimize-type: speed
+            use-non-free: false
+          linker:
+            $mainFileName: main
+            misc-control:
+              - --model-large
+            output-format: hex
+    uploadConfigMap:
+      Custom:
+        bin: ""
+        commandLine: ""
+        eraseChipCommand: ""
+    uploader: Custom
+  Release:
+    cppPreprocessAttrs:
+      defineList:
+        - __SDCC_FLOAT_LIB
+        - FREQ_SYS=16000000
+      incList:
+        - ../../Software/Develop/sdcc/include
+        - ../../Software/Develop/sdcc/include/mcs51
+        - Core/Inc
+      libList: []
+    excludeList: []
+    toolchain: SDCC
+    toolchainConfigMap:
+      SDCC:
+        options:
+          version: 3
+          afterBuildTasks: []
+          asm-compiler:
+            misc-control:
+              - --model-large
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            language-c: c11
+            language-cpp: c++11
+            misc-control:
+              - --model-large
+              - --xram-size 0x1000
+            optimization: level-speed
+          global:
+            device: mcs51
+            misc-control:
+              - --model-large
+            misc-controls: --model-large
+            optimize-type: speed
+          linker:
+            $mainFileName: main
+            misc-control:
+              - --model-large
+            output-format: hex
+    uploadConfigMap:
+      Custom:
+        bin: ""
+        commandLine: ""
+        eraseChipCommand: ""
+    uploader: Custom
